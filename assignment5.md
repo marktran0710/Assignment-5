@@ -1,6 +1,6 @@
 # Assignment 5: KG Multi-Agent QA System (A4 Extension)
 
-Due Date: 4/23 - 5/7  
+Due Date: 4/24 - 5/7  
 TA: 葛亭妤
 
 ---
@@ -87,7 +87,6 @@ Starter pack files:
 
 ### You should not modify (test contract files)
 - `auto_test_a5.py`
-- `test_data_a5.json`
 
 > Note: You may do local experiments, but final submission must remain compatible with TA's fixed test contract.
 
@@ -96,8 +95,7 @@ Starter pack files:
 ## 3) A4 → A5 Continuity Rules (Mandatory)
 
 1. You must use your own A4 KG result (schema and build logic)
-2. You must not redesign into a new domain schema (e.g., Student/Course/Professor graph)
-3. Runtime QA must be read-only on KG
+2. Runtime QA must be read-only on KG
 
 ---
 
@@ -187,7 +185,7 @@ Your report must explain:
 
 ## 9) Final Submission Checklist
 
-Zip filename: `{$StudentID}_Assign5.zip`
+Upload your github link with following files:
 
 ### Mandatory
 1. `README.md`
@@ -219,4 +217,4 @@ Zip filename: `{$StudentID}_Assign5.zip`
 ## Submission Details
 
 Deadline: 2026/5/7  
-Late Policy: Standard course policy applies.
+
