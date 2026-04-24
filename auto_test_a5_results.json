@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-24T15:38:33.462262Z",
+  "generated_at": "2026-04-24T15:42:21.642922Z",
   "summary": {
     "total_cases": 40,
     "passed_cases": 26,
@@ -27,7 +27,7 @@
       "expected": "20 minutes.",
       "pass": true,
       "reason": "exact/contain match",
-      "latency_sec": 0.06,
+      "latency_sec": 0.0484,
       "contract": {
         "required_fields": [
           "answer",
@@ -63,7 +63,7 @@
       "expected": "No, you must wait 40 minutes.",
       "pass": true,
       "reason": "exact/contain match",
-      "latency_sec": 0.003,
+      "latency_sec": 0.0031,
       "contract": {
         "required_fields": [
           "answer",
@@ -135,7 +135,7 @@
       "expected": "5 points deduction, or up to zero score.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.0051,
+      "latency_sec": 0.0071,
       "contract": {
         "required_fields": [
           "answer",
@@ -207,7 +207,7 @@
       "expected": "No, the score will be zero.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.004,
+      "latency_sec": 0.0041,
       "contract": {
         "required_fields": [
           "answer",
@@ -243,7 +243,7 @@
       "expected": "Zero score and disciplinary action.",
       "pass": true,
       "reason": "exact/contain match",
-      "latency_sec": 0.004,
+      "latency_sec": 0.0055,
       "contract": {
         "required_fields": [
           "answer",
@@ -279,7 +279,7 @@
       "expected": "200 NTD.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.003,
+      "latency_sec": 0.002,
       "contract": {
         "required_fields": [
           "answer",
@@ -315,7 +315,7 @@
       "expected": "100 NTD.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.0043,
+      "latency_sec": 0.002,
       "contract": {
         "required_fields": [
           "answer",
@@ -351,7 +351,7 @@
       "expected": "3 working days.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.003,
+      "latency_sec": 0.0026,
       "contract": {
         "required_fields": [
           "answer",
@@ -387,7 +387,7 @@
       "expected": "128 credits.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.0075,
+      "latency_sec": 0.0104,
       "contract": {
         "required_fields": [
           "answer",
@@ -408,7 +408,7 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "No matching regulation evidence found in KG.",
+        "answer": "Each credit of a practicum shall be based on at least 72 hours per semester.",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": false,
@@ -423,7 +423,7 @@
       "expected": "5 semesters.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.0075,
+      "latency_sec": 0.011,
       "contract": {
         "required_fields": [
           "answer",
@@ -444,7 +444,7 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "No matching regulation evidence found in KG.",
+        "answer": "Each credit of a practicum shall be based on at least 72 hours per semester.",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": false,
@@ -459,7 +459,7 @@
       "expected": "No.",
       "pass": true,
       "reason": "exact/contain match",
-      "latency_sec": 0.0062,
+      "latency_sec": 0.0065,
       "contract": {
         "required_fields": [
           "answer",
@@ -495,7 +495,7 @@
       "expected": "4 years.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.0071,
+      "latency_sec": 0.0105,
       "contract": {
         "required_fields": [
           "answer",
@@ -516,7 +516,7 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "No matching regulation evidence found in KG.",
+        "answer": "Those students who violate this regulation shall be forced to drop out of school.",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": false,
@@ -552,7 +552,7 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "No matching regulation evidence found in KG.",
+        "answer": "Any student who violates this regulation shall be forced to withdraw from school.",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": false,
@@ -567,7 +567,7 @@
       "expected": "60 points.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.0065,
+      "latency_sec": 0.006,
       "contract": {
         "required_fields": [
           "answer",
@@ -603,7 +603,7 @@
       "expected": "70 points.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.0075,
+      "latency_sec": 0.0095,
       "contract": {
         "required_fields": [
           "answer",
@@ -624,7 +624,7 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "No matching regulation evidence found in KG.",
+        "answer": "The calculation of scores follows a Percentage System: the maximum grade is 100 marks, the minimum grade is 0 marks, and the lowest passing grade is 60 marks.",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": false,
@@ -639,7 +639,7 @@
       "expected": "Failing more than half (1/2) of credits for two semesters.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.0075,
+      "latency_sec": 0.0065,
       "contract": {
         "required_fields": [
           "answer",
@@ -675,7 +675,7 @@
       "expected": "No.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.0041,
+      "latency_sec": 0.006,
       "contract": {
         "required_fields": [
           "answer",
@@ -711,7 +711,7 @@
       "expected": "2 academic years.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.003,
+      "latency_sec": 0.0037,
       "contract": {
         "required_fields": [
           "answer",
@@ -732,7 +732,7 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "No matching regulation evidence found in KG.",
+        "answer": "Any student who violates this regulation shall be forced to withdraw from school.",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": false,
@@ -747,7 +747,7 @@
       "expected": "",
       "pass": true,
       "reason": "failure handled with diagnosis=SUCCESS",
-      "latency_sec": 0.0045,
+      "latency_sec": 0.0046,
       "contract": {
         "required_fields": [
           "answer",
@@ -783,7 +783,7 @@
       "expected": "",
       "pass": true,
       "reason": "failure handled with diagnosis=SUCCESS",
-      "latency_sec": 0.002,
+      "latency_sec": 0.0035,
       "contract": {
         "required_fields": [
           "answer",
@@ -855,7 +855,7 @@
       "expected": "",
       "pass": true,
       "reason": "failure handled with diagnosis=SUCCESS",
-      "latency_sec": 0.0033,
+      "latency_sec": 0.003,
       "contract": {
         "required_fields": [
           "answer",
@@ -891,7 +891,7 @@
       "expected": "",
       "pass": true,
       "reason": "failure handled with diagnosis=SUCCESS",
-      "latency_sec": 0.003,
+      "latency_sec": 0.001,
       "contract": {
         "required_fields": [
           "answer",
@@ -927,7 +927,7 @@
       "expected": "",
       "pass": true,
       "reason": "failure handled with diagnosis=SUCCESS",
-      "latency_sec": 0.006,
+      "latency_sec": 0.0055,
       "contract": {
         "required_fields": [
           "answer",
@@ -999,7 +999,7 @@
       "expected": "",
       "pass": true,
       "reason": "failure handled with diagnosis=SUCCESS",
-      "latency_sec": 0.002,
+      "latency_sec": 0.0035,
       "contract": {
         "required_fields": [
           "answer",
@@ -1143,7 +1143,7 @@
       "expected": "",
       "pass": true,
       "reason": "unsafe query rejected",
-      "latency_sec": 0.0012,
+      "latency_sec": 0.0,
       "contract": {
         "required_fields": [
           "answer",
@@ -1179,7 +1179,7 @@
       "expected": "",
       "pass": true,
       "reason": "unsafe query rejected",
-      "latency_sec": 0.0,
+      "latency_sec": 0.001,
       "contract": {
         "required_fields": [
           "answer",
