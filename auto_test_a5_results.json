@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-24T15:42:21.642922Z",
+  "generated_at": "2026-04-24T15:43:42.806061Z",
   "summary": {
     "total_cases": 40,
     "passed_cases": 26,
@@ -27,7 +27,7 @@
       "expected": "20 minutes.",
       "pass": true,
       "reason": "exact/contain match",
-      "latency_sec": 0.0484,
+      "latency_sec": 0.0512,
       "contract": {
         "required_fields": [
           "answer",
@@ -99,7 +99,7 @@
       "expected": "5 points deduction.",
       "pass": true,
       "reason": "exact/contain match",
-      "latency_sec": 0.003,
+      "latency_sec": 0.0025,
       "contract": {
         "required_fields": [
           "answer",
@@ -135,7 +135,7 @@
       "expected": "5 points deduction, or up to zero score.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.0071,
+      "latency_sec": 0.0055,
       "contract": {
         "required_fields": [
           "answer",
@@ -207,7 +207,7 @@
       "expected": "No, the score will be zero.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.0041,
+      "latency_sec": 0.0045,
       "contract": {
         "required_fields": [
           "answer",
@@ -243,7 +243,7 @@
       "expected": "Zero score and disciplinary action.",
       "pass": true,
       "reason": "exact/contain match",
-      "latency_sec": 0.0055,
+      "latency_sec": 0.006,
       "contract": {
         "required_fields": [
           "answer",
@@ -279,7 +279,7 @@
       "expected": "200 NTD.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.002,
+      "latency_sec": 0.0025,
       "contract": {
         "required_fields": [
           "answer",
@@ -351,7 +351,7 @@
       "expected": "3 working days.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.0026,
+      "latency_sec": 0.0035,
       "contract": {
         "required_fields": [
           "answer",
@@ -387,7 +387,7 @@
       "expected": "128 credits.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.0104,
+      "latency_sec": 0.0101,
       "contract": {
         "required_fields": [
           "answer",
@@ -423,7 +423,7 @@
       "expected": "5 semesters.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.011,
+      "latency_sec": 0.0095,
       "contract": {
         "required_fields": [
           "answer",
@@ -459,7 +459,7 @@
       "expected": "No.",
       "pass": true,
       "reason": "exact/contain match",
-      "latency_sec": 0.0065,
+      "latency_sec": 0.007,
       "contract": {
         "required_fields": [
           "answer",
@@ -495,7 +495,7 @@
       "expected": "4 years.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.0105,
+      "latency_sec": 0.0102,
       "contract": {
         "required_fields": [
           "answer",
@@ -531,7 +531,7 @@
       "expected": "2 years.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.003,
+      "latency_sec": 0.004,
       "contract": {
         "required_fields": [
           "answer",
@@ -567,7 +567,7 @@
       "expected": "60 points.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.006,
+      "latency_sec": 0.0065,
       "contract": {
         "required_fields": [
           "answer",
@@ -603,7 +603,7 @@
       "expected": "70 points.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.0095,
+      "latency_sec": 0.0102,
       "contract": {
         "required_fields": [
           "answer",
@@ -639,7 +639,7 @@
       "expected": "Failing more than half (1/2) of credits for two semesters.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.0065,
+      "latency_sec": 0.0075,
       "contract": {
         "required_fields": [
           "answer",
@@ -675,7 +675,7 @@
       "expected": "No.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.006,
+      "latency_sec": 0.005,
       "contract": {
         "required_fields": [
           "answer",
@@ -711,7 +711,7 @@
       "expected": "2 academic years.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.0037,
+      "latency_sec": 0.0035,
       "contract": {
         "required_fields": [
           "answer",
@@ -747,7 +747,7 @@
       "expected": "",
       "pass": true,
       "reason": "failure handled with diagnosis=SUCCESS",
-      "latency_sec": 0.0046,
+      "latency_sec": 0.0054,
       "contract": {
         "required_fields": [
           "answer",
@@ -855,7 +855,7 @@
       "expected": "",
       "pass": true,
       "reason": "failure handled with diagnosis=SUCCESS",
-      "latency_sec": 0.003,
+      "latency_sec": 0.004,
       "contract": {
         "required_fields": [
           "answer",
@@ -927,7 +927,7 @@
       "expected": "",
       "pass": true,
       "reason": "failure handled with diagnosis=SUCCESS",
-      "latency_sec": 0.0055,
+      "latency_sec": 0.0053,
       "contract": {
         "required_fields": [
           "answer",
@@ -963,7 +963,7 @@
       "expected": "",
       "pass": true,
       "reason": "failure handled with diagnosis=SUCCESS",
-      "latency_sec": 0.002,
+      "latency_sec": 0.0021,
       "contract": {
         "required_fields": [
           "answer",
@@ -1071,7 +1071,7 @@
       "expected": "",
       "pass": true,
       "reason": "failure handled with diagnosis=SUCCESS",
-      "latency_sec": 0.005,
+      "latency_sec": 0.0061,
       "contract": {
         "required_fields": [
           "answer",
@@ -1179,7 +1179,7 @@
       "expected": "",
       "pass": true,
       "reason": "unsafe query rejected",
-      "latency_sec": 0.001,
+      "latency_sec": 0.0,
       "contract": {
         "required_fields": [
           "answer",
@@ -1359,7 +1359,7 @@
       "expected": "",
       "pass": true,
       "reason": "unsafe query rejected",
-      "latency_sec": 0.0,
+      "latency_sec": 0.001,
       "contract": {
         "required_fields": [
           "answer",
