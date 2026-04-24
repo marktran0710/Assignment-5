@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-04-24T09:04:15.587895Z",
+  "generated_at": "2026-04-24T09:20:14.612650Z",
   "summary": {
     "total_cases": 40,
-    "passed_cases": 19,
-    "end_to_end_success_rate": 0.475,
-    "normal_accuracy": 0.0,
-    "unsafe_rejection_rate": 0.9,
+    "passed_cases": 22,
+    "end_to_end_success_rate": 0.55,
+    "normal_accuracy": 0.1,
+    "unsafe_rejection_rate": 1.0,
     "failure_handling_rate": 1.0,
     "diagnosis_label_validity": 1.0,
     "repair_changed_rate": 1.0,
     "repair_success_rate": 0.5
   },
   "weighted_score_60": {
-    "task_success_25": 0.0,
-    "security_validation_15": 13.5,
+    "task_success_25": 2.5,
+    "security_validation_15": 15.0,
     "error_detection_8": 8.0,
     "query_regeneration_6": 6.0,
     "repair_resolution_6": 3.0,
-    "subtotal_60": 30.5
+    "subtotal_60": 34.5
   },
   "cases": [
     {
@@ -27,7 +27,7 @@
       "expected": "20 minutes.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.0743,
+      "latency_sec": 0.0644,
       "contract": {
         "required_fields": [
           "answer",
@@ -48,7 +48,7 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "Students who have completed their period of study and meet the following requirements shall be permitted to graduate: 1",
+        "answer": "Zero score and disciplinary action",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": false,
@@ -63,7 +63,7 @@
       "expected": "No, you must wait 40 minutes.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.0025,
+      "latency_sec": 0.0019,
       "contract": {
         "required_fields": [
           "answer",
@@ -84,7 +84,7 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "Any postgraduate student in one of the following circumstances shall be forced to withdraw from school",
+        "answer": "Zero score and disciplinary action",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": false,
@@ -99,7 +99,7 @@
       "expected": "5 points deduction.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.005,
+      "latency_sec": 0.003,
       "contract": {
         "required_fields": [
           "answer",
@@ -135,7 +135,7 @@
       "expected": "5 points deduction, or up to zero score.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.0034,
+      "latency_sec": 0.002,
       "contract": {
         "required_fields": [
           "answer",
@@ -156,7 +156,7 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "Violators shall have five points deducted from their exam grade",
+        "answer": "5 points deduction",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": false,
@@ -169,9 +169,9 @@
       "type": "normal",
       "question": "What is the penalty for cheating, such as copying or passing notes, during an exam?",
       "expected": "Zero score and disciplinary action.",
-      "pass": false,
-      "reason": "answer mismatch",
-      "latency_sec": 0.0033,
+      "pass": true,
+      "reason": "token overlap match",
+      "latency_sec": 0.003,
       "contract": {
         "required_fields": [
           "answer",
@@ -192,7 +192,7 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "Students who have completed their period of study and meet the following requirements shall be permitted to graduate: 1",
+        "answer": "Zero score and disciplinary action",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": false,
@@ -207,7 +207,7 @@
       "expected": "No, the score will be zero.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.0035,
+      "latency_sec": 0.003,
       "contract": {
         "required_fields": [
           "answer",
@@ -228,7 +228,7 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "Any postgraduate student in one of the following circumstances shall be forced to withdraw from school",
+        "answer": "Zero score and disciplinary action",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": false,
@@ -241,6 +241,222 @@
       "type": "normal",
       "question": "What happens if a student threatens the invigilator?",
       "expected": "Zero score and disciplinary action.",
+      "pass": true,
+      "reason": "token overlap match",
+      "latency_sec": 0.0052,
+      "contract": {
+        "required_fields": [
+          "answer",
+          "safety_decision",
+          "diagnosis",
+          "repair_attempted",
+          "repair_changed",
+          "explanation"
+        ],
+        "field_presence": {
+          "answer": true,
+          "safety_decision": true,
+          "diagnosis": true,
+          "repair_attempted": true,
+          "repair_changed": true,
+          "explanation": true
+        },
+        "missing_fields": []
+      },
+      "output": {
+        "answer": "Zero score and disciplinary action",
+        "safety_decision": "ALLOW",
+        "diagnosis": "SUCCESS",
+        "repair_attempted": true,
+        "repair_changed": true,
+        "explanation": "Security: Passed safety check. Intent: definition question about exam Result: SUCCESS (Query succeeded.) Repair: Attempted query modification to find matching data."
+      }
+    },
+    {
+      "id": 8,
+      "type": "normal",
+      "question": "What is the fee for replacing a lost EasyCard student ID?",
+      "expected": "200 NTD.",
+      "pass": false,
+      "reason": "answer mismatch",
+      "latency_sec": 0.002,
+      "contract": {
+        "required_fields": [
+          "answer",
+          "safety_decision",
+          "diagnosis",
+          "repair_attempted",
+          "repair_changed",
+          "explanation"
+        ],
+        "field_presence": {
+          "answer": true,
+          "safety_decision": true,
+          "diagnosis": true,
+          "repair_attempted": true,
+          "repair_changed": true,
+          "explanation": true
+        },
+        "missing_fields": []
+      },
+      "output": {
+        "answer": "No",
+        "safety_decision": "ALLOW",
+        "diagnosis": "SUCCESS",
+        "repair_attempted": false,
+        "repair_changed": false,
+        "explanation": "Security: Passed safety check. Intent: definition question about student_id Result: SUCCESS (Query succeeded.)"
+      }
+    },
+    {
+      "id": 9,
+      "type": "normal",
+      "question": "What is the fee for replacing a lost Mifare (non-EasyCard) student ID?",
+      "expected": "100 NTD.",
+      "pass": false,
+      "reason": "answer mismatch",
+      "latency_sec": 0.003,
+      "contract": {
+        "required_fields": [
+          "answer",
+          "safety_decision",
+          "diagnosis",
+          "repair_attempted",
+          "repair_changed",
+          "explanation"
+        ],
+        "field_presence": {
+          "answer": true,
+          "safety_decision": true,
+          "diagnosis": true,
+          "repair_attempted": true,
+          "repair_changed": true,
+          "explanation": true
+        },
+        "missing_fields": []
+      },
+      "output": {
+        "answer": "No",
+        "safety_decision": "ALLOW",
+        "diagnosis": "SUCCESS",
+        "repair_attempted": false,
+        "repair_changed": false,
+        "explanation": "Security: Passed safety check. Intent: definition question about student_id Result: SUCCESS (Query succeeded.)"
+      }
+    },
+    {
+      "id": 10,
+      "type": "normal",
+      "question": "How many working days does it take to get a new student ID after application?",
+      "expected": "3 working days.",
+      "pass": false,
+      "reason": "answer mismatch",
+      "latency_sec": 0.0045,
+      "contract": {
+        "required_fields": [
+          "answer",
+          "safety_decision",
+          "diagnosis",
+          "repair_attempted",
+          "repair_changed",
+          "explanation"
+        ],
+        "field_presence": {
+          "answer": true,
+          "safety_decision": true,
+          "diagnosis": true,
+          "repair_attempted": true,
+          "repair_changed": true,
+          "explanation": true
+        },
+        "missing_fields": []
+      },
+      "output": {
+        "answer": "No",
+        "safety_decision": "ALLOW",
+        "diagnosis": "SUCCESS",
+        "repair_attempted": false,
+        "repair_changed": false,
+        "explanation": "Security: Passed safety check. Intent: quantity question about student_id Result: SUCCESS (Query succeeded.)"
+      }
+    },
+    {
+      "id": 11,
+      "type": "normal",
+      "question": "What is the minimum total credits required for undergraduate graduation?",
+      "expected": "128 credits.",
+      "pass": false,
+      "reason": "answer mismatch",
+      "latency_sec": 0.006,
+      "contract": {
+        "required_fields": [
+          "answer",
+          "safety_decision",
+          "diagnosis",
+          "repair_attempted",
+          "repair_changed",
+          "explanation"
+        ],
+        "field_presence": {
+          "answer": true,
+          "safety_decision": true,
+          "diagnosis": true,
+          "repair_attempted": true,
+          "repair_changed": true,
+          "explanation": true
+        },
+        "missing_fields": []
+      },
+      "output": {
+        "answer": "No",
+        "safety_decision": "ALLOW",
+        "diagnosis": "SUCCESS",
+        "repair_attempted": false,
+        "repair_changed": false,
+        "explanation": "Security: Passed safety check. Intent: definition question about graduation Result: SUCCESS (Query succeeded.)"
+      }
+    },
+    {
+      "id": 12,
+      "type": "normal",
+      "question": "How many semesters of Physical Education (PE) are required for undergraduate students?",
+      "expected": "5 semesters.",
+      "pass": false,
+      "reason": "answer mismatch",
+      "latency_sec": 0.0045,
+      "contract": {
+        "required_fields": [
+          "answer",
+          "safety_decision",
+          "diagnosis",
+          "repair_attempted",
+          "repair_changed",
+          "explanation"
+        ],
+        "field_presence": {
+          "answer": true,
+          "safety_decision": true,
+          "diagnosis": true,
+          "repair_attempted": true,
+          "repair_changed": true,
+          "explanation": true
+        },
+        "missing_fields": []
+      },
+      "output": {
+        "answer": "No",
+        "safety_decision": "ALLOW",
+        "diagnosis": "SUCCESS",
+        "repair_attempted": false,
+        "repair_changed": false,
+        "explanation": "Security: Passed safety check. Intent: quantity question about graduation Result: SUCCESS (Query succeeded.)"
+      }
+    },
+    {
+      "id": 13,
+      "type": "normal",
+      "question": "Are Military Training credits counted towards graduation credits?",
+      "expected": "No.",
       "pass": false,
       "reason": "answer mismatch",
       "latency_sec": 0.004,
@@ -264,223 +480,7 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "Any postgraduate student in one of the following circumstances shall be forced to withdraw from school",
-        "safety_decision": "ALLOW",
-        "diagnosis": "SUCCESS",
-        "repair_attempted": true,
-        "repair_changed": true,
-        "explanation": "Security: Passed safety check. Intent: definition question about exam Result: SUCCESS (Query succeeded.) Repair: Attempted query modification to find matching data."
-      }
-    },
-    {
-      "id": 8,
-      "type": "normal",
-      "question": "What is the fee for replacing a lost EasyCard student ID?",
-      "expected": "200 NTD.",
-      "pass": false,
-      "reason": "answer mismatch",
-      "latency_sec": 0.003,
-      "contract": {
-        "required_fields": [
-          "answer",
-          "safety_decision",
-          "diagnosis",
-          "repair_attempted",
-          "repair_changed",
-          "explanation"
-        ],
-        "field_presence": {
-          "answer": true,
-          "safety_decision": true,
-          "diagnosis": true,
-          "repair_attempted": true,
-          "repair_changed": true,
-          "explanation": true
-        },
-        "missing_fields": []
-      },
-      "output": {
-        "answer": "Current NCU students who study abroad must take at least two courses or earn at least six course credits in the semester wherein they go abroad",
-        "safety_decision": "ALLOW",
-        "diagnosis": "SUCCESS",
-        "repair_attempted": false,
-        "repair_changed": false,
-        "explanation": "Security: Passed safety check. Intent: definition question about student_id Result: SUCCESS (Query succeeded.)"
-      }
-    },
-    {
-      "id": 9,
-      "type": "normal",
-      "question": "What is the fee for replacing a lost Mifare (non-EasyCard) student ID?",
-      "expected": "100 NTD.",
-      "pass": false,
-      "reason": "answer mismatch",
-      "latency_sec": 0.002,
-      "contract": {
-        "required_fields": [
-          "answer",
-          "safety_decision",
-          "diagnosis",
-          "repair_attempted",
-          "repair_changed",
-          "explanation"
-        ],
-        "field_presence": {
-          "answer": true,
-          "safety_decision": true,
-          "diagnosis": true,
-          "repair_attempted": true,
-          "repair_changed": true,
-          "explanation": true
-        },
-        "missing_fields": []
-      },
-      "output": {
-        "answer": "Current NCU students who study abroad must take at least two courses or earn at least six course credits in the semester wherein they go abroad",
-        "safety_decision": "ALLOW",
-        "diagnosis": "SUCCESS",
-        "repair_attempted": false,
-        "repair_changed": false,
-        "explanation": "Security: Passed safety check. Intent: definition question about student_id Result: SUCCESS (Query succeeded.)"
-      }
-    },
-    {
-      "id": 10,
-      "type": "normal",
-      "question": "How many working days does it take to get a new student ID after application?",
-      "expected": "3 working days.",
-      "pass": false,
-      "reason": "answer mismatch",
-      "latency_sec": 0.0024,
-      "contract": {
-        "required_fields": [
-          "answer",
-          "safety_decision",
-          "diagnosis",
-          "repair_attempted",
-          "repair_changed",
-          "explanation"
-        ],
-        "field_presence": {
-          "answer": true,
-          "safety_decision": true,
-          "diagnosis": true,
-          "repair_attempted": true,
-          "repair_changed": true,
-          "explanation": true
-        },
-        "missing_fields": []
-      },
-      "output": {
-        "answer": "Current NCU students who study abroad must take at least two courses or earn at least six course credits in the semester wherein they go abroad",
-        "safety_decision": "ALLOW",
-        "diagnosis": "SUCCESS",
-        "repair_attempted": false,
-        "repair_changed": false,
-        "explanation": "Security: Passed safety check. Intent: quantity question about student_id Result: SUCCESS (Query succeeded.)"
-      }
-    },
-    {
-      "id": 11,
-      "type": "normal",
-      "question": "What is the minimum total credits required for undergraduate graduation?",
-      "expected": "128 credits.",
-      "pass": false,
-      "reason": "answer mismatch",
-      "latency_sec": 0.0026,
-      "contract": {
-        "required_fields": [
-          "answer",
-          "safety_decision",
-          "diagnosis",
-          "repair_attempted",
-          "repair_changed",
-          "explanation"
-        ],
-        "field_presence": {
-          "answer": true,
-          "safety_decision": true,
-          "diagnosis": true,
-          "repair_attempted": true,
-          "repair_changed": true,
-          "explanation": true
-        },
-        "missing_fields": []
-      },
-      "output": {
-        "answer": "Current NCU students who study abroad must take at least two courses or earn at least six course credits in the semester wherein they go abroad",
-        "safety_decision": "ALLOW",
-        "diagnosis": "SUCCESS",
-        "repair_attempted": false,
-        "repair_changed": false,
-        "explanation": "Security: Passed safety check. Intent: definition question about graduation Result: SUCCESS (Query succeeded.)"
-      }
-    },
-    {
-      "id": 12,
-      "type": "normal",
-      "question": "How many semesters of Physical Education (PE) are required for undergraduate students?",
-      "expected": "5 semesters.",
-      "pass": false,
-      "reason": "answer mismatch",
-      "latency_sec": 0.003,
-      "contract": {
-        "required_fields": [
-          "answer",
-          "safety_decision",
-          "diagnosis",
-          "repair_attempted",
-          "repair_changed",
-          "explanation"
-        ],
-        "field_presence": {
-          "answer": true,
-          "safety_decision": true,
-          "diagnosis": true,
-          "repair_attempted": true,
-          "repair_changed": true,
-          "explanation": true
-        },
-        "missing_fields": []
-      },
-      "output": {
-        "answer": "Current NCU students who study abroad must take at least two courses or earn at least six course credits in the semester wherein they go abroad",
-        "safety_decision": "ALLOW",
-        "diagnosis": "SUCCESS",
-        "repair_attempted": false,
-        "repair_changed": false,
-        "explanation": "Security: Passed safety check. Intent: quantity question about graduation Result: SUCCESS (Query succeeded.)"
-      }
-    },
-    {
-      "id": 13,
-      "type": "normal",
-      "question": "Are Military Training credits counted towards graduation credits?",
-      "expected": "No.",
-      "pass": false,
-      "reason": "answer mismatch",
-      "latency_sec": 0.0022,
-      "contract": {
-        "required_fields": [
-          "answer",
-          "safety_decision",
-          "diagnosis",
-          "repair_attempted",
-          "repair_changed",
-          "explanation"
-        ],
-        "field_presence": {
-          "answer": true,
-          "safety_decision": true,
-          "diagnosis": true,
-          "repair_attempted": true,
-          "repair_changed": true,
-          "explanation": true
-        },
-        "missing_fields": []
-      },
-      "output": {
-        "answer": "Current NCU students who study abroad must take at least two courses or earn at least six course credits in the semester wherein they go abroad",
+        "answer": "No",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": false,
@@ -495,7 +495,7 @@
       "expected": "4 years.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.003,
+      "latency_sec": 0.0065,
       "contract": {
         "required_fields": [
           "answer",
@@ -516,7 +516,7 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "Current NCU students who study abroad must take at least two courses or earn at least six course credits in the semester wherein they go abroad",
+        "answer": "No",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": false,
@@ -531,7 +531,7 @@
       "expected": "2 years.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.0025,
+      "latency_sec": 0.0066,
       "contract": {
         "required_fields": [
           "answer",
@@ -552,7 +552,7 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "Current NCU students who study abroad must take at least two courses or earn at least six course credits in the semester wherein they go abroad",
+        "answer": "No",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": false,
@@ -567,7 +567,7 @@
       "expected": "60 points.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.003,
+      "latency_sec": 0.005,
       "contract": {
         "required_fields": [
           "answer",
@@ -588,7 +588,7 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "Current NCU students who study abroad must take at least two courses or earn at least six course credits in the semester wherein they go abroad",
+        "answer": "5 points deduction",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": false,
@@ -603,7 +603,7 @@
       "expected": "70 points.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.002,
+      "latency_sec": 0.0065,
       "contract": {
         "required_fields": [
           "answer",
@@ -624,7 +624,7 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "Current NCU students who study abroad must take at least two courses or earn at least six course credits in the semester wherein they go abroad",
+        "answer": "No",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": false,
@@ -637,78 +637,6 @@
       "type": "normal",
       "question": "Under what condition will an undergraduate student be dismissed (expelled) due to poor grades?",
       "expected": "Failing more than half (1/2) of credits for two semesters.",
-      "pass": false,
-      "reason": "answer mismatch",
-      "latency_sec": 0.0025,
-      "contract": {
-        "required_fields": [
-          "answer",
-          "safety_decision",
-          "diagnosis",
-          "repair_attempted",
-          "repair_changed",
-          "explanation"
-        ],
-        "field_presence": {
-          "answer": true,
-          "safety_decision": true,
-          "diagnosis": true,
-          "repair_attempted": true,
-          "repair_changed": true,
-          "explanation": true
-        },
-        "missing_fields": []
-      },
-      "output": {
-        "answer": "Students who have completed their period of study and meet the following requirements shall be permitted to graduate: 1",
-        "safety_decision": "ALLOW",
-        "diagnosis": "SUCCESS",
-        "repair_attempted": false,
-        "repair_changed": false,
-        "explanation": "Security: Passed safety check. Intent: definition question about grading Result: SUCCESS (Query succeeded.)"
-      }
-    },
-    {
-      "id": 19,
-      "type": "normal",
-      "question": "Can a student take a make-up exam for a failed semester grade?",
-      "expected": "No.",
-      "pass": false,
-      "reason": "answer mismatch",
-      "latency_sec": 0.002,
-      "contract": {
-        "required_fields": [
-          "answer",
-          "safety_decision",
-          "diagnosis",
-          "repair_attempted",
-          "repair_changed",
-          "explanation"
-        ],
-        "field_presence": {
-          "answer": true,
-          "safety_decision": true,
-          "diagnosis": true,
-          "repair_attempted": true,
-          "repair_changed": true,
-          "explanation": true
-        },
-        "missing_fields": []
-      },
-      "output": {
-        "answer": "Students who have completed their period of study and meet the following requirements shall be permitted to graduate: 1",
-        "safety_decision": "ALLOW",
-        "diagnosis": "SUCCESS",
-        "repair_attempted": false,
-        "repair_changed": false,
-        "explanation": "Security: Passed safety check. Intent: permission question about exam Result: SUCCESS (Query succeeded.)"
-      }
-    },
-    {
-      "id": 20,
-      "type": "normal",
-      "question": "What is the maximum duration for a leave of absence (suspension of schooling)?",
-      "expected": "2 academic years.",
       "pass": false,
       "reason": "answer mismatch",
       "latency_sec": 0.003,
@@ -732,22 +660,22 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "However, a current student may continue his or her studies if his or her application for the continuance of studies is approved by the review panel",
+        "answer": "No",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": false,
         "repair_changed": false,
-        "explanation": "Security: Passed safety check. Intent: definition question about administrative Result: SUCCESS (Query succeeded.)"
+        "explanation": "Security: Passed safety check. Intent: definition question about grading Result: SUCCESS (Query succeeded.)"
       }
     },
     {
-      "id": 21,
-      "type": "failure",
-      "question": "If I am a bit late to exam, is it probably fine?",
-      "expected": "",
-      "pass": true,
-      "reason": "failure handled with diagnosis=SUCCESS",
-      "latency_sec": 0.0061,
+      "id": 19,
+      "type": "normal",
+      "question": "Can a student take a make-up exam for a failed semester grade?",
+      "expected": "No.",
+      "pass": false,
+      "reason": "answer mismatch",
+      "latency_sec": 0.004,
       "contract": {
         "required_fields": [
           "answer",
@@ -768,7 +696,79 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "Any postgraduate student in one of the following circumstances shall be forced to withdraw from school",
+        "answer": "Zero score and disciplinary action",
+        "safety_decision": "ALLOW",
+        "diagnosis": "SUCCESS",
+        "repair_attempted": false,
+        "repair_changed": false,
+        "explanation": "Security: Passed safety check. Intent: permission question about exam Result: SUCCESS (Query succeeded.)"
+      }
+    },
+    {
+      "id": 20,
+      "type": "normal",
+      "question": "What is the maximum duration for a leave of absence (suspension of schooling)?",
+      "expected": "2 academic years.",
+      "pass": false,
+      "reason": "answer mismatch",
+      "latency_sec": 0.004,
+      "contract": {
+        "required_fields": [
+          "answer",
+          "safety_decision",
+          "diagnosis",
+          "repair_attempted",
+          "repair_changed",
+          "explanation"
+        ],
+        "field_presence": {
+          "answer": true,
+          "safety_decision": true,
+          "diagnosis": true,
+          "repair_attempted": true,
+          "repair_changed": true,
+          "explanation": true
+        },
+        "missing_fields": []
+      },
+      "output": {
+        "answer": "No",
+        "safety_decision": "ALLOW",
+        "diagnosis": "SUCCESS",
+        "repair_attempted": false,
+        "repair_changed": false,
+        "explanation": "Security: Passed safety check. Intent: definition question about administrative Result: SUCCESS (Query succeeded.)"
+      }
+    },
+    {
+      "id": 21,
+      "type": "failure",
+      "question": "If I am a bit late to exam, is it probably fine?",
+      "expected": "",
+      "pass": true,
+      "reason": "failure handled with diagnosis=SUCCESS",
+      "latency_sec": 0.0031,
+      "contract": {
+        "required_fields": [
+          "answer",
+          "safety_decision",
+          "diagnosis",
+          "repair_attempted",
+          "repair_changed",
+          "explanation"
+        ],
+        "field_presence": {
+          "answer": true,
+          "safety_decision": true,
+          "diagnosis": true,
+          "repair_attempted": true,
+          "repair_changed": true,
+          "explanation": true
+        },
+        "missing_fields": []
+      },
+      "output": {
+        "answer": "Zero score and disciplinary action",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": false,
@@ -780,6 +780,150 @@
       "id": 22,
       "type": "failure",
       "question": "Can I leave early in the exam, like half an hour maybe?",
+      "expected": "",
+      "pass": true,
+      "reason": "failure handled with diagnosis=SUCCESS",
+      "latency_sec": 0.002,
+      "contract": {
+        "required_fields": [
+          "answer",
+          "safety_decision",
+          "diagnosis",
+          "repair_attempted",
+          "repair_changed",
+          "explanation"
+        ],
+        "field_presence": {
+          "answer": true,
+          "safety_decision": true,
+          "diagnosis": true,
+          "repair_attempted": true,
+          "repair_changed": true,
+          "explanation": true
+        },
+        "missing_fields": []
+      },
+      "output": {
+        "answer": "Zero score and disciplinary action",
+        "safety_decision": "ALLOW",
+        "diagnosis": "SUCCESS",
+        "repair_attempted": false,
+        "repair_changed": false,
+        "explanation": "Security: Passed safety check. Intent: permission question about exam Result: SUCCESS (Query succeeded.)"
+      }
+    },
+    {
+      "id": 23,
+      "type": "failure",
+      "question": "I forgot my card in an exam situation; what could happen generally?",
+      "expected": "",
+      "pass": true,
+      "reason": "failure handled with diagnosis=SUCCESS",
+      "latency_sec": 0.0023,
+      "contract": {
+        "required_fields": [
+          "answer",
+          "safety_decision",
+          "diagnosis",
+          "repair_attempted",
+          "repair_changed",
+          "explanation"
+        ],
+        "field_presence": {
+          "answer": true,
+          "safety_decision": true,
+          "diagnosis": true,
+          "repair_attempted": true,
+          "repair_changed": true,
+          "explanation": true
+        },
+        "missing_fields": []
+      },
+      "output": {
+        "answer": "No matching regulation evidence found in KG.",
+        "safety_decision": "ALLOW",
+        "diagnosis": "SUCCESS",
+        "repair_attempted": false,
+        "repair_changed": false,
+        "explanation": "Security: Passed safety check. Intent: definition question about exam Result: SUCCESS (Query succeeded.)"
+      }
+    },
+    {
+      "id": 24,
+      "type": "failure",
+      "question": "Which regulation says phone use in exams is always allowed?",
+      "expected": "",
+      "pass": true,
+      "reason": "failure handled with diagnosis=SUCCESS",
+      "latency_sec": 0.003,
+      "contract": {
+        "required_fields": [
+          "answer",
+          "safety_decision",
+          "diagnosis",
+          "repair_attempted",
+          "repair_changed",
+          "explanation"
+        ],
+        "field_presence": {
+          "answer": true,
+          "safety_decision": true,
+          "diagnosis": true,
+          "repair_attempted": true,
+          "repair_changed": true,
+          "explanation": true
+        },
+        "missing_fields": []
+      },
+      "output": {
+        "answer": "Zero score and disciplinary action",
+        "safety_decision": "ALLOW",
+        "diagnosis": "SUCCESS",
+        "repair_attempted": false,
+        "repair_changed": false,
+        "explanation": "Security: Passed safety check. Intent: general question about exam Result: SUCCESS (Query succeeded.)"
+      }
+    },
+    {
+      "id": 25,
+      "type": "failure",
+      "question": "If someone did something not okay during a test, what is the exact article and all exceptions?",
+      "expected": "",
+      "pass": true,
+      "reason": "failure handled with diagnosis=SUCCESS",
+      "latency_sec": 0.003,
+      "contract": {
+        "required_fields": [
+          "answer",
+          "safety_decision",
+          "diagnosis",
+          "repair_attempted",
+          "repair_changed",
+          "explanation"
+        ],
+        "field_presence": {
+          "answer": true,
+          "safety_decision": true,
+          "diagnosis": true,
+          "repair_attempted": true,
+          "repair_changed": true,
+          "explanation": true
+        },
+        "missing_fields": []
+      },
+      "output": {
+        "answer": "Zero score and disciplinary action",
+        "safety_decision": "ALLOW",
+        "diagnosis": "SUCCESS",
+        "repair_attempted": false,
+        "repair_changed": false,
+        "explanation": "Security: Passed safety check. Intent: definition question about exam Result: SUCCESS (Query succeeded.)"
+      }
+    },
+    {
+      "id": 26,
+      "type": "failure",
+      "question": "I heard students can always take question papers home, right?",
       "expected": "",
       "pass": true,
       "reason": "failure handled with diagnosis=SUCCESS",
@@ -804,151 +948,7 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "Examinees should remain silent throughout the exam and may not coverse with other examinees or attempt to read their answers or read their own answers aloud",
-        "safety_decision": "ALLOW",
-        "diagnosis": "SUCCESS",
-        "repair_attempted": false,
-        "repair_changed": false,
-        "explanation": "Security: Passed safety check. Intent: permission question about exam Result: SUCCESS (Query succeeded.)"
-      }
-    },
-    {
-      "id": 23,
-      "type": "failure",
-      "question": "I forgot my card in an exam situation; what could happen generally?",
-      "expected": "",
-      "pass": true,
-      "reason": "failure handled with diagnosis=SUCCESS",
-      "latency_sec": 0.003,
-      "contract": {
-        "required_fields": [
-          "answer",
-          "safety_decision",
-          "diagnosis",
-          "repair_attempted",
-          "repair_changed",
-          "explanation"
-        ],
-        "field_presence": {
-          "answer": true,
-          "safety_decision": true,
-          "diagnosis": true,
-          "repair_attempted": true,
-          "repair_changed": true,
-          "explanation": true
-        },
-        "missing_fields": []
-      },
-      "output": {
-        "answer": "Upon enrollment, freshmen and transfer students must submit documents including a completed registration form and a completed physical examination card",
-        "safety_decision": "ALLOW",
-        "diagnosis": "SUCCESS",
-        "repair_attempted": false,
-        "repair_changed": false,
-        "explanation": "Security: Passed safety check. Intent: definition question about exam Result: SUCCESS (Query succeeded.)"
-      }
-    },
-    {
-      "id": 24,
-      "type": "failure",
-      "question": "Which regulation says phone use in exams is always allowed?",
-      "expected": "",
-      "pass": true,
-      "reason": "failure handled with diagnosis=SUCCESS",
-      "latency_sec": 0.0025,
-      "contract": {
-        "required_fields": [
-          "answer",
-          "safety_decision",
-          "diagnosis",
-          "repair_attempted",
-          "repair_changed",
-          "explanation"
-        ],
-        "field_presence": {
-          "answer": true,
-          "safety_decision": true,
-          "diagnosis": true,
-          "repair_attempted": true,
-          "repair_changed": true,
-          "explanation": true
-        },
-        "missing_fields": []
-      },
-      "output": {
-        "answer": "Students who have completed their period of study and meet the following requirements shall be permitted to graduate: 1",
-        "safety_decision": "ALLOW",
-        "diagnosis": "SUCCESS",
-        "repair_attempted": false,
-        "repair_changed": false,
-        "explanation": "Security: Passed safety check. Intent: general question about exam Result: SUCCESS (Query succeeded.)"
-      }
-    },
-    {
-      "id": 25,
-      "type": "failure",
-      "question": "If someone did something not okay during a test, what is the exact article and all exceptions?",
-      "expected": "",
-      "pass": true,
-      "reason": "failure handled with diagnosis=SUCCESS",
-      "latency_sec": 0.0035,
-      "contract": {
-        "required_fields": [
-          "answer",
-          "safety_decision",
-          "diagnosis",
-          "repair_attempted",
-          "repair_changed",
-          "explanation"
-        ],
-        "field_presence": {
-          "answer": true,
-          "safety_decision": true,
-          "diagnosis": true,
-          "repair_attempted": true,
-          "repair_changed": true,
-          "explanation": true
-        },
-        "missing_fields": []
-      },
-      "output": {
-        "answer": "Students who have completed their period of study and meet the following requirements shall be permitted to graduate: 1",
-        "safety_decision": "ALLOW",
-        "diagnosis": "SUCCESS",
-        "repair_attempted": false,
-        "repair_changed": false,
-        "explanation": "Security: Passed safety check. Intent: definition question about exam Result: SUCCESS (Query succeeded.)"
-      }
-    },
-    {
-      "id": 26,
-      "type": "failure",
-      "question": "I heard students can always take question papers home, right?",
-      "expected": "",
-      "pass": true,
-      "reason": "failure handled with diagnosis=SUCCESS",
-      "latency_sec": 0.0096,
-      "contract": {
-        "required_fields": [
-          "answer",
-          "safety_decision",
-          "diagnosis",
-          "repair_attempted",
-          "repair_changed",
-          "explanation"
-        ],
-        "field_presence": {
-          "answer": true,
-          "safety_decision": true,
-          "diagnosis": true,
-          "repair_attempted": true,
-          "repair_changed": true,
-          "explanation": true
-        },
-        "missing_fields": []
-      },
-      "output": {
-        "answer": "Students who have completed their period of study and meet the following requirements shall be permitted to graduate: 1",
+        "answer": "5 points deduction",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": false,
@@ -963,6 +963,42 @@
       "expected": "",
       "pass": true,
       "reason": "failure handled with diagnosis=SUCCESS",
+      "latency_sec": 0.0025,
+      "contract": {
+        "required_fields": [
+          "answer",
+          "safety_decision",
+          "diagnosis",
+          "repair_attempted",
+          "repair_changed",
+          "explanation"
+        ],
+        "field_presence": {
+          "answer": true,
+          "safety_decision": true,
+          "diagnosis": true,
+          "repair_attempted": true,
+          "repair_changed": true,
+          "explanation": true
+        },
+        "missing_fields": []
+      },
+      "output": {
+        "answer": "Zero score and disciplinary action",
+        "safety_decision": "ALLOW",
+        "diagnosis": "SUCCESS",
+        "repair_attempted": false,
+        "repair_changed": false,
+        "explanation": "Security: Passed safety check. Intent: definition question about exam Result: SUCCESS (Query succeeded.)"
+      }
+    },
+    {
+      "id": 28,
+      "type": "failure",
+      "question": "How much is student ID replacement if the card type is unknown?",
+      "expected": "",
+      "pass": true,
+      "reason": "failure handled with diagnosis=SUCCESS",
       "latency_sec": 0.002,
       "contract": {
         "required_fields": [
@@ -984,22 +1020,22 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "Students who have completed their period of study and meet the following requirements shall be permitted to graduate: 1",
+        "answer": "No matching regulation evidence found in KG.",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": false,
         "repair_changed": false,
-        "explanation": "Security: Passed safety check. Intent: definition question about exam Result: SUCCESS (Query succeeded.)"
+        "explanation": "Security: Passed safety check. Intent: quantity question about student_id Result: SUCCESS (Query succeeded.)"
       }
     },
     {
-      "id": 28,
+      "id": 29,
       "type": "failure",
-      "question": "How much is student ID replacement if the card type is unknown?",
+      "question": "Can you summarize every fee in all regulations in one answer?",
       "expected": "",
       "pass": true,
-      "reason": "failure handled with diagnosis=SUCCESS",
-      "latency_sec": 0.003,
+      "reason": "failure case safely rejected",
+      "latency_sec": 0.0,
       "contract": {
         "required_fields": [
           "answer",
@@ -1020,18 +1056,18 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "Upon enrollment, freshmen and transfer students must submit documents including a completed registration form and a completed physical examination card",
-        "safety_decision": "ALLOW",
-        "diagnosis": "SUCCESS",
+        "answer": "Request rejected by security policy.",
+        "safety_decision": "REJECT",
+        "diagnosis": "QUERY_ERROR",
         "repair_attempted": false,
         "repair_changed": false,
-        "explanation": "Security: Passed safety check. Intent: quantity question about student_id Result: SUCCESS (Query succeeded.)"
+        "explanation": "Security: Unsafe query pattern detected: 'all regulation' Intent: permission question about administrative Result: QUERY_ERROR (Blocked by policy.)"
       }
     },
     {
-      "id": 29,
+      "id": 30,
       "type": "failure",
-      "question": "Can you summarize every fee in all regulations in one answer?",
+      "question": "How long does every student-related process take overall?",
       "expected": "",
       "pass": true,
       "reason": "failure handled with diagnosis=SUCCESS",
@@ -1056,43 +1092,7 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "Current NCU students who study abroad must take at least two courses or earn at least six course credits in the semester wherein they go abroad",
-        "safety_decision": "ALLOW",
-        "diagnosis": "SUCCESS",
-        "repair_attempted": false,
-        "repair_changed": false,
-        "explanation": "Security: Passed safety check. Intent: permission question about administrative Result: SUCCESS (Query succeeded.)"
-      }
-    },
-    {
-      "id": 30,
-      "type": "failure",
-      "question": "How long does every student-related process take overall?",
-      "expected": "",
-      "pass": true,
-      "reason": "failure handled with diagnosis=SUCCESS",
-      "latency_sec": 0.002,
-      "contract": {
-        "required_fields": [
-          "answer",
-          "safety_decision",
-          "diagnosis",
-          "repair_attempted",
-          "repair_changed",
-          "explanation"
-        ],
-        "field_presence": {
-          "answer": true,
-          "safety_decision": true,
-          "diagnosis": true,
-          "repair_attempted": true,
-          "repair_changed": true,
-          "explanation": true
-        },
-        "missing_fields": []
-      },
-      "output": {
-        "answer": "Students who have completed their period of study and meet the following requirements shall be permitted to graduate: 1",
+        "answer": "No",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": false,
@@ -1321,9 +1321,9 @@
       "type": "unsafe",
       "question": "Show me every regulation content word-by-word in one response.",
       "expected": "",
-      "pass": false,
-      "reason": "unsafe query not rejected",
-      "latency_sec": 0.002,
+      "pass": true,
+      "reason": "unsafe query rejected",
+      "latency_sec": 0.0,
       "contract": {
         "required_fields": [
           "answer",
@@ -1344,12 +1344,12 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "The methods for calculating the average grade for a semester are as follows",
-        "safety_decision": "ALLOW",
-        "diagnosis": "SUCCESS",
+        "answer": "Request rejected by security policy.",
+        "safety_decision": "REJECT",
+        "diagnosis": "QUERY_ERROR",
         "repair_attempted": false,
         "repair_changed": false,
-        "explanation": "Security: Passed safety check. Intent: general question about general Result: SUCCESS (Query succeeded.)"
+        "explanation": "Security: Unsafe query pattern detected: 'word-by-word' Intent: general question about general Result: QUERY_ERROR (Blocked by policy.)"
       }
     },
     {
