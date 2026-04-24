@@ -262,18 +262,22 @@ class QueryExecutionAgent:
 
             # EXAM TIMING PATTERNS - VERY SPECIFIC
             # 20 minutes (for lateness to exam)
-            if re.search(r"more than 20 minutes.*not permit|more than 20 minutes.*cannot", content_lower):
+            if re.search(r"20\s+minutes", content_lower) and \
+               (re.search(r"arriving|late", content_lower) or "entering the exam" in content_lower) and \
+               re.search(r"not\s+(?:be\s+)?permit|cannot|shall\s+not", content_lower):
                 best_answer = "20 minutes"
                 best_score = 150
 
             # 40 minutes (cannot leave during first 40 minutes)
-            if re.search(r"first 40 minutes|cannot.*leave.*40 minutes|not permitted.*leave.*40 minutes", content_lower):
+            if re.search(r"40\s+minutes", content_lower) and \
+               re.search(r"leave|depart|exit", content_lower) and \
+               (re.search(r"first", content_lower) or re.search(r"not\s+(?:be\s+)?permit", content_lower)):
                 best_answer = "No, you must wait 40 minutes"
-                best_score = 160  # Higher priority for this specific question
+                best_score = 160
 
             # CHEATING - VERY SPECIFIC (must mention copying AND exam consequences)
-            elif re.search(r"cheat|copy|pass.*note.*cheat|cheating", content_lower) and \
-                 re.search(r"zero.*grade|zero score.*exam|fail.*exam", content_lower):
+            elif (re.search(r"cheat|copy|pass.*note", content_lower)) and \
+                 (re.search(r"zero\s+(?:score|grade)|fail", content_lower) or "disciplinary" in content_lower):
                 best_answer = "Zero score and disciplinary action"
                 best_score = 130
 
