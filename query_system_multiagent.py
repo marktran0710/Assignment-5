@@ -82,7 +82,7 @@ def answer_question(question: str) -> dict[str, Any]:
 
     # --- Answer Extraction ---
     if diagnosis["label"] == "SUCCESS":
-        answer = executor.generate_answer(execution)
+        answer = executor.generate_answer(execution, question)
     elif diagnosis["label"] == "NO_DATA":
         answer = "No matching regulation evidence found in KG."
     else:

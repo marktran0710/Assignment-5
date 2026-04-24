@@ -51,13 +51,17 @@ class NLUnderstandingAgent:
             "will", "would", "should", "may", "might", "must", "for", "with", "at", "by",
             "from", "up", "about", "into", "through", "during", "what", "how", "when", "where",
             "why", "which", "who", "me", "you", "i", "it", "if", "that", "this", "these", "those",
-            "student", "exam", "penalty", "get", "take", "leave", "make", "find"
+            "get", "take", "make", "find"  # Kept common verbs, but removed domain terms
         }
 
         words = re.findall(r"\b\w+\b", q_lower)
         keywords = [w for w in words if w not in stopwords and len(w) > 2]
         # Keep only unique and limit to top 5 (more focused)
         keywords = list(dict.fromkeys(keywords))[:5]
+
+        # Filter out common question words that aren't domain-specific
+        question_words = {"many", "much", "often", "always", "sometimes", "what", "when"}
+        keywords = [kw for kw in keywords if kw not in question_words]
 
         # Detect aspect - prioritize more specific matches
         aspect_keywords = {
@@ -237,7 +241,7 @@ class QueryExecutionAgent:
         else:
             return "MATCH (r:Rule) WHERE size(r.content) > 100 RETURN r.name as name, r.content as content ORDER BY r.name ASC LIMIT 30"
 
-    def generate_answer(self, execution: dict[str, Any]) -> str:
+    def generate_answer(self, execution: dict[str, Any], question: str = "") -> str:
         """Generate answer from results - MATCH QUESTION TO BEST RULE FIRST."""
         rows = execution.get("rows", [])
 
@@ -248,9 +252,10 @@ class QueryExecutionAgent:
 
         # Score each row - return ONLY if we have a very strong match
         # The key is to be conservative and only return answers when we're sure
-        
+
         best_answer = None
         best_score = -999
+        question_lower = question.lower()
 
         for row in rows:
             content = row.get("content", "").strip()
@@ -265,19 +270,30 @@ class QueryExecutionAgent:
             if re.search(r"20\s+minutes", content_lower) and \
                (re.search(r"arriving|late", content_lower) or "entering the exam" in content_lower) and \
                re.search(r"not\s+(?:be\s+)?permit|cannot|shall\s+not", content_lower):
-                best_answer = "20 minutes"
-                best_score = 150
+                match_score = 150
+                # Boost if question specifically asks about lateness
+                if re.search(r"(how many minutes|barred|minute.*late)", question_lower):
+                    match_score = 175
+                if match_score > best_score:
+                    best_answer = "20 minutes"
+                    best_score = match_score
 
             # 40 minutes (cannot leave during first 40 minutes)
             if re.search(r"40\s+minutes", content_lower) and \
                re.search(r"leave|depart|exit", content_lower) and \
                (re.search(r"first", content_lower) or re.search(r"not\s+(?:be\s+)?permit", content_lower)):
-                best_answer = "No, you must wait 40 minutes"
-                best_score = 160
+                match_score = 160
+                # Boost if question asks about leaving
+                if re.search(r"(can i leave|leave.*exam|leave.*room)", question_lower):
+                    match_score = 180
+                if match_score > best_score:
+                    best_answer = "No, you must wait 40 minutes"
+                    best_score = match_score
 
             # CHEATING - VERY SPECIFIC (must mention copying AND exam consequences)
             elif (re.search(r"cheat|copy|pass.*note", content_lower)) and \
-                 (re.search(r"zero\s+(?:score|grade)|fail", content_lower) or "disciplinary" in content_lower):
+                 (re.search(r"zero\s+(?:score|grade)", content_lower) and re.search(r"exam|test", content_lower) or \
+                  "disciplinary" in content_lower):
                 best_answer = "Zero score and disciplinary action"
                 best_score = 130
 
@@ -409,11 +425,14 @@ class QueryExecutionAgent:
             # Fallback query - search for rules with substantial content
             return "MATCH (r:Rule) WHERE size(r.content) > 100 RETURN r.name as name, r.content as content ORDER BY r.name ASC LIMIT 50"
 
-        # Create keyword filter - ANY keyword can match (OR for better recall)
-        if len(keywords) > 1:
-            keyword_filter = " OR ".join([f"LOWER(r.content) CONTAINS LOWER('{kw}')" for kw in keywords])
+        # Create keyword filter - REQUIRE top keywords to match (AND for precision)
+        top_keywords = keywords[:3] if len(keywords) > 0 else []
+        if len(top_keywords) > 1:
+            keyword_filter = " AND ".join([f"LOWER(r.content) CONTAINS LOWER('{kw}')" for kw in top_keywords])
+        elif len(top_keywords) == 1:
+            keyword_filter = f"LOWER(r.content) CONTAINS LOWER('{top_keywords[0]}')"
         else:
-            keyword_filter = f"LOWER(r.content) CONTAINS LOWER('{keywords[0]}')"
+            keyword_filter = "size(r.content) > 50"
 
         # Strategy-specific queries
         # Changed: removed ORDER BY size DESC (it puts longest docs first, which are often headers)

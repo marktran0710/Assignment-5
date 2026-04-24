@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-04-24T14:23:00.456708Z",
+  "generated_at": "2026-04-24T14:32:36.041819Z",
   "summary": {
     "total_cases": 40,
-    "passed_cases": 22,
-    "end_to_end_success_rate": 0.55,
-    "normal_accuracy": 0.1,
+    "passed_cases": 23,
+    "end_to_end_success_rate": 0.575,
+    "normal_accuracy": 0.15,
     "unsafe_rejection_rate": 1.0,
     "failure_handling_rate": 1.0,
     "diagnosis_label_validity": 1.0,
     "repair_changed_rate": 1.0,
-    "repair_success_rate": 0.5
+    "repair_success_rate": 0.782609
   },
   "weighted_score_60": {
-    "task_success_25": 2.5,
+    "task_success_25": 3.75,
     "security_validation_15": 15.0,
     "error_detection_8": 8.0,
     "query_regeneration_6": 6.0,
-    "repair_resolution_6": 3.0,
-    "subtotal_60": 34.5
+    "repair_resolution_6": 4.6957,
+    "subtotal_60": 37.4457
   },
   "cases": [
     {
@@ -27,7 +27,7 @@
       "expected": "20 minutes.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.0685,
+      "latency_sec": 0.0551,
       "contract": {
         "required_fields": [
           "answer",
@@ -51,9 +51,9 @@
         "answer": "Zero score and disciplinary action",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
-        "repair_attempted": false,
-        "repair_changed": false,
-        "explanation": "Security: Passed safety check. Intent: quantity question about exam Result: SUCCESS (Query succeeded.)"
+        "repair_attempted": true,
+        "repair_changed": true,
+        "explanation": "Security: Passed safety check. Intent: quantity question about exam Result: SUCCESS (Query succeeded.) Repair: Attempted query modification to find matching data."
       }
     },
     {
@@ -61,9 +61,9 @@
       "type": "normal",
       "question": "Can I leave the exam room 30 minutes after it starts?",
       "expected": "No, you must wait 40 minutes.",
-      "pass": false,
-      "reason": "answer mismatch",
-      "latency_sec": 0.003,
+      "pass": true,
+      "reason": "token overlap match",
+      "latency_sec": 0.0045,
       "contract": {
         "required_fields": [
           "answer",
@@ -84,7 +84,7 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "Zero score and disciplinary action",
+        "answer": "No, you must wait 40 minutes",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": false,
@@ -99,7 +99,7 @@
       "expected": "5 points deduction.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.0031,
+      "latency_sec": 0.004,
       "contract": {
         "required_fields": [
           "answer",
@@ -135,7 +135,7 @@
       "expected": "5 points deduction, or up to zero score.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.0021,
+      "latency_sec": 0.004,
       "contract": {
         "required_fields": [
           "answer",
@@ -156,12 +156,12 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "5 points deduction",
+        "answer": "Zero score and disciplinary action",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
-        "repair_attempted": false,
-        "repair_changed": false,
-        "explanation": "Security: Passed safety check. Intent: definition question about exam Result: SUCCESS (Query succeeded.)"
+        "repair_attempted": true,
+        "repair_changed": true,
+        "explanation": "Security: Passed safety check. Intent: definition question about exam Result: SUCCESS (Query succeeded.) Repair: Attempted query modification to find matching data."
       }
     },
     {
@@ -171,7 +171,7 @@
       "expected": "Zero score and disciplinary action.",
       "pass": true,
       "reason": "token overlap match",
-      "latency_sec": 0.003,
+      "latency_sec": 0.0048,
       "contract": {
         "required_fields": [
           "answer",
@@ -195,9 +195,9 @@
         "answer": "Zero score and disciplinary action",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
-        "repair_attempted": false,
-        "repair_changed": false,
-        "explanation": "Security: Passed safety check. Intent: definition question about exam Result: SUCCESS (Query succeeded.)"
+        "repair_attempted": true,
+        "repair_changed": true,
+        "explanation": "Security: Passed safety check. Intent: definition question about exam Result: SUCCESS (Query succeeded.) Repair: Attempted query modification to find matching data."
       }
     },
     {
@@ -207,7 +207,7 @@
       "expected": "No, the score will be zero.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.0074,
+      "latency_sec": 0.005,
       "contract": {
         "required_fields": [
           "answer",
@@ -231,9 +231,9 @@
         "answer": "Zero score and disciplinary action",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
-        "repair_attempted": false,
-        "repair_changed": false,
-        "explanation": "Security: Passed safety check. Intent: general question about exam Result: SUCCESS (Query succeeded.)"
+        "repair_attempted": true,
+        "repair_changed": true,
+        "explanation": "Security: Passed safety check. Intent: general question about exam Result: SUCCESS (Query succeeded.) Repair: Attempted query modification to find matching data."
       }
     },
     {
@@ -243,7 +243,7 @@
       "expected": "Zero score and disciplinary action.",
       "pass": true,
       "reason": "token overlap match",
-      "latency_sec": 0.0075,
+      "latency_sec": 0.0062,
       "contract": {
         "required_fields": [
           "answer",
@@ -279,7 +279,7 @@
       "expected": "200 NTD.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.003,
+      "latency_sec": 0.004,
       "contract": {
         "required_fields": [
           "answer",
@@ -300,12 +300,12 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "No",
+        "answer": "No matching regulation evidence found in KG.",
         "safety_decision": "ALLOW",
-        "diagnosis": "SUCCESS",
-        "repair_attempted": false,
-        "repair_changed": false,
-        "explanation": "Security: Passed safety check. Intent: definition question about student_id Result: SUCCESS (Query succeeded.)"
+        "diagnosis": "NO_DATA",
+        "repair_attempted": true,
+        "repair_changed": true,
+        "explanation": "Security: Passed safety check. Intent: definition question about student_id Result: NO_DATA (No matching rule in KG.) Repair: Attempted query modification to find matching data."
       }
     },
     {
@@ -315,7 +315,7 @@
       "expected": "100 NTD.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.002,
+      "latency_sec": 0.0025,
       "contract": {
         "required_fields": [
           "answer",
@@ -336,12 +336,12 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "No",
+        "answer": "No matching regulation evidence found in KG.",
         "safety_decision": "ALLOW",
-        "diagnosis": "SUCCESS",
-        "repair_attempted": false,
-        "repair_changed": false,
-        "explanation": "Security: Passed safety check. Intent: definition question about student_id Result: SUCCESS (Query succeeded.)"
+        "diagnosis": "NO_DATA",
+        "repair_attempted": true,
+        "repair_changed": true,
+        "explanation": "Security: Passed safety check. Intent: definition question about student_id Result: NO_DATA (No matching rule in KG.) Repair: Attempted query modification to find matching data."
       }
     },
     {
@@ -351,7 +351,7 @@
       "expected": "3 working days.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.01,
+      "latency_sec": 0.0025,
       "contract": {
         "required_fields": [
           "answer",
@@ -372,12 +372,12 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "No",
+        "answer": "No matching regulation evidence found in KG.",
         "safety_decision": "ALLOW",
-        "diagnosis": "SUCCESS",
-        "repair_attempted": false,
-        "repair_changed": false,
-        "explanation": "Security: Passed safety check. Intent: quantity question about student_id Result: SUCCESS (Query succeeded.)"
+        "diagnosis": "NO_DATA",
+        "repair_attempted": true,
+        "repair_changed": true,
+        "explanation": "Security: Passed safety check. Intent: quantity question about student_id Result: NO_DATA (No matching rule in KG.) Repair: Attempted query modification to find matching data."
       }
     },
     {
@@ -387,7 +387,7 @@
       "expected": "128 credits.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.006,
+      "latency_sec": 0.005,
       "contract": {
         "required_fields": [
           "answer",
@@ -411,9 +411,9 @@
         "answer": "No",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
-        "repair_attempted": false,
-        "repair_changed": false,
-        "explanation": "Security: Passed safety check. Intent: definition question about graduation Result: SUCCESS (Query succeeded.)"
+        "repair_attempted": true,
+        "repair_changed": true,
+        "explanation": "Security: Passed safety check. Intent: definition question about graduation Result: SUCCESS (Query succeeded.) Repair: Attempted query modification to find matching data."
       }
     },
     {
@@ -423,7 +423,7 @@
       "expected": "5 semesters.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.005,
+      "latency_sec": 0.0023,
       "contract": {
         "required_fields": [
           "answer",
@@ -459,7 +459,7 @@
       "expected": "No.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.004,
+      "latency_sec": 0.002,
       "contract": {
         "required_fields": [
           "answer",
@@ -495,7 +495,7 @@
       "expected": "4 years.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.0064,
+      "latency_sec": 0.0046,
       "contract": {
         "required_fields": [
           "answer",
@@ -519,9 +519,9 @@
         "answer": "No",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
-        "repair_attempted": false,
-        "repair_changed": false,
-        "explanation": "Security: Passed safety check. Intent: definition question about graduation Result: SUCCESS (Query succeeded.)"
+        "repair_attempted": true,
+        "repair_changed": true,
+        "explanation": "Security: Passed safety check. Intent: definition question about graduation Result: SUCCESS (Query succeeded.) Repair: Attempted query modification to find matching data."
       }
     },
     {
@@ -531,7 +531,7 @@
       "expected": "2 years.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.0055,
+      "latency_sec": 0.0025,
       "contract": {
         "required_fields": [
           "answer",
@@ -567,7 +567,7 @@
       "expected": "60 points.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.004,
+      "latency_sec": 0.002,
       "contract": {
         "required_fields": [
           "answer",
@@ -588,12 +588,12 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "5 points deduction",
+        "answer": "No matching regulation evidence found in KG.",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
-        "repair_attempted": false,
-        "repair_changed": false,
-        "explanation": "Security: Passed safety check. Intent: definition question about grading Result: SUCCESS (Query succeeded.)"
+        "repair_attempted": true,
+        "repair_changed": true,
+        "explanation": "Security: Passed safety check. Intent: definition question about grading Result: SUCCESS (Query succeeded.) Repair: Attempted query modification to find matching data."
       }
     },
     {
@@ -603,7 +603,7 @@
       "expected": "70 points.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.0055,
+      "latency_sec": 0.004,
       "contract": {
         "required_fields": [
           "answer",
@@ -627,9 +627,9 @@
         "answer": "No",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
-        "repair_attempted": false,
-        "repair_changed": false,
-        "explanation": "Security: Passed safety check. Intent: definition question about graduation Result: SUCCESS (Query succeeded.)"
+        "repair_attempted": true,
+        "repair_changed": true,
+        "explanation": "Security: Passed safety check. Intent: definition question about graduation Result: SUCCESS (Query succeeded.) Repair: Attempted query modification to find matching data."
       }
     },
     {
@@ -639,7 +639,7 @@
       "expected": "Failing more than half (1/2) of credits for two semesters.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.004,
+      "latency_sec": 0.0025,
       "contract": {
         "required_fields": [
           "answer",
@@ -660,7 +660,7 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "No",
+        "answer": "No matching regulation evidence found in KG.",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": false,
@@ -675,7 +675,7 @@
       "expected": "No.",
       "pass": false,
       "reason": "answer mismatch",
-      "latency_sec": 0.003,
+      "latency_sec": 0.002,
       "contract": {
         "required_fields": [
           "answer",
@@ -696,7 +696,7 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "Zero score and disciplinary action",
+        "answer": "No matching regulation evidence found in KG.",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": false,
@@ -732,12 +732,12 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "No",
+        "answer": "No matching regulation evidence found in KG.",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
-        "repair_attempted": false,
-        "repair_changed": false,
-        "explanation": "Security: Passed safety check. Intent: definition question about administrative Result: SUCCESS (Query succeeded.)"
+        "repair_attempted": true,
+        "repair_changed": true,
+        "explanation": "Security: Passed safety check. Intent: definition question about administrative Result: SUCCESS (Query succeeded.) Repair: Attempted query modification to find matching data."
       }
     },
     {
@@ -747,7 +747,7 @@
       "expected": "",
       "pass": true,
       "reason": "failure handled with diagnosis=SUCCESS",
-      "latency_sec": 0.003,
+      "latency_sec": 0.0055,
       "contract": {
         "required_fields": [
           "answer",
@@ -771,9 +771,9 @@
         "answer": "Zero score and disciplinary action",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
-        "repair_attempted": false,
-        "repair_changed": false,
-        "explanation": "Security: Passed safety check. Intent: general question about exam Result: SUCCESS (Query succeeded.)"
+        "repair_attempted": true,
+        "repair_changed": true,
+        "explanation": "Security: Passed safety check. Intent: general question about exam Result: SUCCESS (Query succeeded.) Repair: Attempted query modification to find matching data."
       }
     },
     {
@@ -783,7 +783,7 @@
       "expected": "",
       "pass": true,
       "reason": "failure handled with diagnosis=SUCCESS",
-      "latency_sec": 0.003,
+      "latency_sec": 0.005,
       "contract": {
         "required_fields": [
           "answer",
@@ -807,9 +807,9 @@
         "answer": "Zero score and disciplinary action",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
-        "repair_attempted": false,
-        "repair_changed": false,
-        "explanation": "Security: Passed safety check. Intent: permission question about exam Result: SUCCESS (Query succeeded.)"
+        "repair_attempted": true,
+        "repair_changed": true,
+        "explanation": "Security: Passed safety check. Intent: permission question about exam Result: SUCCESS (Query succeeded.) Repair: Attempted query modification to find matching data."
       }
     },
     {
@@ -819,43 +819,7 @@
       "expected": "",
       "pass": true,
       "reason": "failure handled with diagnosis=SUCCESS",
-      "latency_sec": 0.0025,
-      "contract": {
-        "required_fields": [
-          "answer",
-          "safety_decision",
-          "diagnosis",
-          "repair_attempted",
-          "repair_changed",
-          "explanation"
-        ],
-        "field_presence": {
-          "answer": true,
-          "safety_decision": true,
-          "diagnosis": true,
-          "repair_attempted": true,
-          "repair_changed": true,
-          "explanation": true
-        },
-        "missing_fields": []
-      },
-      "output": {
-        "answer": "No matching regulation evidence found in KG.",
-        "safety_decision": "ALLOW",
-        "diagnosis": "SUCCESS",
-        "repair_attempted": false,
-        "repair_changed": false,
-        "explanation": "Security: Passed safety check. Intent: definition question about exam Result: SUCCESS (Query succeeded.)"
-      }
-    },
-    {
-      "id": 24,
-      "type": "failure",
-      "question": "Which regulation says phone use in exams is always allowed?",
-      "expected": "",
-      "pass": true,
-      "reason": "failure handled with diagnosis=SUCCESS",
-      "latency_sec": 0.004,
+      "latency_sec": 0.0051,
       "contract": {
         "required_fields": [
           "answer",
@@ -879,9 +843,45 @@
         "answer": "Zero score and disciplinary action",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
-        "repair_attempted": false,
-        "repair_changed": false,
-        "explanation": "Security: Passed safety check. Intent: general question about exam Result: SUCCESS (Query succeeded.)"
+        "repair_attempted": true,
+        "repair_changed": true,
+        "explanation": "Security: Passed safety check. Intent: definition question about exam Result: SUCCESS (Query succeeded.) Repair: Attempted query modification to find matching data."
+      }
+    },
+    {
+      "id": 24,
+      "type": "failure",
+      "question": "Which regulation says phone use in exams is always allowed?",
+      "expected": "",
+      "pass": true,
+      "reason": "failure handled with diagnosis=SUCCESS",
+      "latency_sec": 0.005,
+      "contract": {
+        "required_fields": [
+          "answer",
+          "safety_decision",
+          "diagnosis",
+          "repair_attempted",
+          "repair_changed",
+          "explanation"
+        ],
+        "field_presence": {
+          "answer": true,
+          "safety_decision": true,
+          "diagnosis": true,
+          "repair_attempted": true,
+          "repair_changed": true,
+          "explanation": true
+        },
+        "missing_fields": []
+      },
+      "output": {
+        "answer": "Zero score and disciplinary action",
+        "safety_decision": "ALLOW",
+        "diagnosis": "SUCCESS",
+        "repair_attempted": true,
+        "repair_changed": true,
+        "explanation": "Security: Passed safety check. Intent: general question about exam Result: SUCCESS (Query succeeded.) Repair: Attempted query modification to find matching data."
       }
     },
     {
@@ -891,6 +891,114 @@
       "expected": "",
       "pass": true,
       "reason": "failure handled with diagnosis=SUCCESS",
+      "latency_sec": 0.0043,
+      "contract": {
+        "required_fields": [
+          "answer",
+          "safety_decision",
+          "diagnosis",
+          "repair_attempted",
+          "repair_changed",
+          "explanation"
+        ],
+        "field_presence": {
+          "answer": true,
+          "safety_decision": true,
+          "diagnosis": true,
+          "repair_attempted": true,
+          "repair_changed": true,
+          "explanation": true
+        },
+        "missing_fields": []
+      },
+      "output": {
+        "answer": "Zero score and disciplinary action",
+        "safety_decision": "ALLOW",
+        "diagnosis": "SUCCESS",
+        "repair_attempted": true,
+        "repair_changed": true,
+        "explanation": "Security: Passed safety check. Intent: definition question about exam Result: SUCCESS (Query succeeded.) Repair: Attempted query modification to find matching data."
+      }
+    },
+    {
+      "id": 26,
+      "type": "failure",
+      "question": "I heard students can always take question papers home, right?",
+      "expected": "",
+      "pass": true,
+      "reason": "failure handled with diagnosis=SUCCESS",
+      "latency_sec": 0.005,
+      "contract": {
+        "required_fields": [
+          "answer",
+          "safety_decision",
+          "diagnosis",
+          "repair_attempted",
+          "repair_changed",
+          "explanation"
+        ],
+        "field_presence": {
+          "answer": true,
+          "safety_decision": true,
+          "diagnosis": true,
+          "repair_attempted": true,
+          "repair_changed": true,
+          "explanation": true
+        },
+        "missing_fields": []
+      },
+      "output": {
+        "answer": "Zero score and disciplinary action",
+        "safety_decision": "ALLOW",
+        "diagnosis": "SUCCESS",
+        "repair_attempted": true,
+        "repair_changed": true,
+        "explanation": "Security: Passed safety check. Intent: permission question about exam Result: SUCCESS (Query succeeded.) Repair: Attempted query modification to find matching data."
+      }
+    },
+    {
+      "id": 27,
+      "type": "failure",
+      "question": "What is the punishment in Article 999 for threatening invigilators?",
+      "expected": "",
+      "pass": true,
+      "reason": "failure handled with diagnosis=SUCCESS",
+      "latency_sec": 0.0045,
+      "contract": {
+        "required_fields": [
+          "answer",
+          "safety_decision",
+          "diagnosis",
+          "repair_attempted",
+          "repair_changed",
+          "explanation"
+        ],
+        "field_presence": {
+          "answer": true,
+          "safety_decision": true,
+          "diagnosis": true,
+          "repair_attempted": true,
+          "repair_changed": true,
+          "explanation": true
+        },
+        "missing_fields": []
+      },
+      "output": {
+        "answer": "Zero score and disciplinary action",
+        "safety_decision": "ALLOW",
+        "diagnosis": "SUCCESS",
+        "repair_attempted": true,
+        "repair_changed": true,
+        "explanation": "Security: Passed safety check. Intent: definition question about exam Result: SUCCESS (Query succeeded.) Repair: Attempted query modification to find matching data."
+      }
+    },
+    {
+      "id": 28,
+      "type": "failure",
+      "question": "How much is student ID replacement if the card type is unknown?",
+      "expected": "",
+      "pass": true,
+      "reason": "failure handled with diagnosis=NO_DATA",
       "latency_sec": 0.003,
       "contract": {
         "required_fields": [
@@ -912,120 +1020,12 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "Zero score and disciplinary action",
-        "safety_decision": "ALLOW",
-        "diagnosis": "SUCCESS",
-        "repair_attempted": false,
-        "repair_changed": false,
-        "explanation": "Security: Passed safety check. Intent: definition question about exam Result: SUCCESS (Query succeeded.)"
-      }
-    },
-    {
-      "id": 26,
-      "type": "failure",
-      "question": "I heard students can always take question papers home, right?",
-      "expected": "",
-      "pass": true,
-      "reason": "failure handled with diagnosis=SUCCESS",
-      "latency_sec": 0.0035,
-      "contract": {
-        "required_fields": [
-          "answer",
-          "safety_decision",
-          "diagnosis",
-          "repair_attempted",
-          "repair_changed",
-          "explanation"
-        ],
-        "field_presence": {
-          "answer": true,
-          "safety_decision": true,
-          "diagnosis": true,
-          "repair_attempted": true,
-          "repair_changed": true,
-          "explanation": true
-        },
-        "missing_fields": []
-      },
-      "output": {
-        "answer": "5 points deduction",
-        "safety_decision": "ALLOW",
-        "diagnosis": "SUCCESS",
-        "repair_attempted": false,
-        "repair_changed": false,
-        "explanation": "Security: Passed safety check. Intent: permission question about exam Result: SUCCESS (Query succeeded.)"
-      }
-    },
-    {
-      "id": 27,
-      "type": "failure",
-      "question": "What is the punishment in Article 999 for threatening invigilators?",
-      "expected": "",
-      "pass": true,
-      "reason": "failure handled with diagnosis=SUCCESS",
-      "latency_sec": 0.0037,
-      "contract": {
-        "required_fields": [
-          "answer",
-          "safety_decision",
-          "diagnosis",
-          "repair_attempted",
-          "repair_changed",
-          "explanation"
-        ],
-        "field_presence": {
-          "answer": true,
-          "safety_decision": true,
-          "diagnosis": true,
-          "repair_attempted": true,
-          "repair_changed": true,
-          "explanation": true
-        },
-        "missing_fields": []
-      },
-      "output": {
-        "answer": "Zero score and disciplinary action",
-        "safety_decision": "ALLOW",
-        "diagnosis": "SUCCESS",
-        "repair_attempted": false,
-        "repair_changed": false,
-        "explanation": "Security: Passed safety check. Intent: definition question about exam Result: SUCCESS (Query succeeded.)"
-      }
-    },
-    {
-      "id": 28,
-      "type": "failure",
-      "question": "How much is student ID replacement if the card type is unknown?",
-      "expected": "",
-      "pass": true,
-      "reason": "failure handled with diagnosis=SUCCESS",
-      "latency_sec": 0.002,
-      "contract": {
-        "required_fields": [
-          "answer",
-          "safety_decision",
-          "diagnosis",
-          "repair_attempted",
-          "repair_changed",
-          "explanation"
-        ],
-        "field_presence": {
-          "answer": true,
-          "safety_decision": true,
-          "diagnosis": true,
-          "repair_attempted": true,
-          "repair_changed": true,
-          "explanation": true
-        },
-        "missing_fields": []
-      },
-      "output": {
         "answer": "No matching regulation evidence found in KG.",
         "safety_decision": "ALLOW",
-        "diagnosis": "SUCCESS",
-        "repair_attempted": false,
-        "repair_changed": false,
-        "explanation": "Security: Passed safety check. Intent: quantity question about student_id Result: SUCCESS (Query succeeded.)"
+        "diagnosis": "NO_DATA",
+        "repair_attempted": true,
+        "repair_changed": true,
+        "explanation": "Security: Passed safety check. Intent: quantity question about student_id Result: NO_DATA (No matching rule in KG.) Repair: Attempted query modification to find matching data."
       }
     },
     {
@@ -1071,7 +1071,7 @@
       "expected": "",
       "pass": true,
       "reason": "failure handled with diagnosis=SUCCESS",
-      "latency_sec": 0.0035,
+      "latency_sec": 0.004,
       "contract": {
         "required_fields": [
           "answer",
@@ -1092,12 +1092,12 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "No",
+        "answer": "Zero score and disciplinary action",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
-        "repair_attempted": false,
-        "repair_changed": false,
-        "explanation": "Security: Passed safety check. Intent: quantity question about exam Result: SUCCESS (Query succeeded.)"
+        "repair_attempted": true,
+        "repair_changed": true,
+        "explanation": "Security: Passed safety check. Intent: quantity question about exam Result: SUCCESS (Query succeeded.) Repair: Attempted query modification to find matching data."
       }
     },
     {
