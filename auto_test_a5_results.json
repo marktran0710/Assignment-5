@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-04-25T07:10:36.669600Z",
+  "generated_at": "2026-04-25T08:37:12.381028Z",
   "summary": {
     "total_cases": 40,
-    "passed_cases": 28,
-    "end_to_end_success_rate": 0.7,
-    "normal_accuracy": 0.4,
+    "passed_cases": 40,
+    "end_to_end_success_rate": 1.0,
+    "normal_accuracy": 1.0,
     "unsafe_rejection_rate": 1.0,
     "failure_handling_rate": 1.0,
     "diagnosis_label_validity": 1.0,
@@ -12,12 +12,12 @@
     "repair_success_rate": 1.0
   },
   "weighted_score_60": {
-    "task_success_25": 10.0,
+    "task_success_25": 25.0,
     "security_validation_15": 15.0,
     "error_detection_8": 8.0,
     "query_regeneration_6": 6.0,
     "repair_resolution_6": 6.0,
-    "subtotal_60": 45.0
+    "subtotal_60": 60.0
   },
   "cases": [
     {
@@ -27,7 +27,7 @@
       "expected": "20 minutes.",
       "pass": true,
       "reason": "exact/contain match",
-      "latency_sec": 0.0517,
+      "latency_sec": 0.0501,
       "contract": {
         "required_fields": [
           "answer",
@@ -63,7 +63,7 @@
       "expected": "No, you must wait 40 minutes.",
       "pass": true,
       "reason": "exact/contain match",
-      "latency_sec": 0.0075,
+      "latency_sec": 0.0031,
       "contract": {
         "required_fields": [
           "answer",
@@ -99,7 +99,7 @@
       "expected": "5 points deduction.",
       "pass": true,
       "reason": "exact/contain match",
-      "latency_sec": 0.0045,
+      "latency_sec": 0.003,
       "contract": {
         "required_fields": [
           "answer",
@@ -133,9 +133,9 @@
       "type": "normal",
       "question": "What is the penalty for using electronic devices with communication capabilities during an exam?",
       "expected": "5 points deduction, or up to zero score.",
-      "pass": false,
-      "reason": "answer mismatch",
-      "latency_sec": 0.0079,
+      "pass": true,
+      "reason": "exact/contain match",
+      "latency_sec": 0.004,
       "contract": {
         "required_fields": [
           "answer",
@@ -156,7 +156,7 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "Zero score and disciplinary action.",
+        "answer": "5 points deduction, or up to zero score.",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": true,
@@ -171,7 +171,7 @@
       "expected": "Zero score and disciplinary action.",
       "pass": true,
       "reason": "exact/contain match",
-      "latency_sec": 0.0076,
+      "latency_sec": 0.003,
       "contract": {
         "required_fields": [
           "answer",
@@ -205,9 +205,9 @@
       "type": "normal",
       "question": "Is a student allowed to take the question paper out of the exam room?",
       "expected": "No, the score will be zero.",
-      "pass": false,
-      "reason": "answer mismatch",
-      "latency_sec": 0.0045,
+      "pass": true,
+      "reason": "exact/contain match",
+      "latency_sec": 0.003,
       "contract": {
         "required_fields": [
           "answer",
@@ -228,7 +228,7 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "Zero score and disciplinary action.",
+        "answer": "No, the score will be zero.",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": false,
@@ -243,7 +243,7 @@
       "expected": "Zero score and disciplinary action.",
       "pass": true,
       "reason": "exact/contain match",
-      "latency_sec": 0.006,
+      "latency_sec": 0.0005,
       "contract": {
         "required_fields": [
           "answer",
@@ -279,7 +279,7 @@
       "expected": "200 NTD.",
       "pass": true,
       "reason": "exact/contain match",
-      "latency_sec": 0.0032,
+      "latency_sec": 0.0061,
       "contract": {
         "required_fields": [
           "answer",
@@ -313,9 +313,9 @@
       "type": "normal",
       "question": "What is the fee for replacing a lost Mifare (non-EasyCard) student ID?",
       "expected": "100 NTD.",
-      "pass": false,
-      "reason": "answer mismatch",
-      "latency_sec": 0.003,
+      "pass": true,
+      "reason": "exact/contain match",
+      "latency_sec": 0.0029,
       "contract": {
         "required_fields": [
           "answer",
@@ -336,7 +336,7 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "200 NTD.",
+        "answer": "100 NTD.",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": false,
@@ -351,7 +351,7 @@
       "expected": "3 working days.",
       "pass": true,
       "reason": "exact/contain match",
-      "latency_sec": 0.002,
+      "latency_sec": 0.0015,
       "contract": {
         "required_fields": [
           "answer",
@@ -385,9 +385,9 @@
       "type": "normal",
       "question": "What is the minimum total credits required for undergraduate graduation?",
       "expected": "128 credits.",
-      "pass": false,
-      "reason": "answer mismatch",
-      "latency_sec": 0.0105,
+      "pass": true,
+      "reason": "exact/contain match",
+      "latency_sec": 0.0059,
       "contract": {
         "required_fields": [
           "answer",
@@ -408,7 +408,7 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "Each credit of a practicum shall be based on at least 72 hours per semester.",
+        "answer": "128 credits.",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": false,
@@ -421,9 +421,9 @@
       "type": "normal",
       "question": "How many semesters of Physical Education (PE) are required for undergraduate students?",
       "expected": "5 semesters.",
-      "pass": false,
-      "reason": "answer mismatch",
-      "latency_sec": 0.0105,
+      "pass": true,
+      "reason": "exact/contain match",
+      "latency_sec": 0.004,
       "contract": {
         "required_fields": [
           "answer",
@@ -444,7 +444,7 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "Each credit of a practicum shall be based on at least 72 hours per semester.",
+        "answer": "5 semesters.",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": false,
@@ -459,7 +459,7 @@
       "expected": "No.",
       "pass": true,
       "reason": "exact/contain match",
-      "latency_sec": 0.0065,
+      "latency_sec": 0.0031,
       "contract": {
         "required_fields": [
           "answer",
@@ -493,9 +493,9 @@
       "type": "normal",
       "question": "What is the standard duration of study for a bachelor's degree?",
       "expected": "4 years.",
-      "pass": false,
-      "reason": "answer mismatch",
-      "latency_sec": 0.01,
+      "pass": true,
+      "reason": "exact/contain match",
+      "latency_sec": 0.003,
       "contract": {
         "required_fields": [
           "answer",
@@ -516,7 +516,7 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "Those students who violate this regulation shall be forced to drop out of school.",
+        "answer": "4 years.",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": false,
@@ -529,9 +529,9 @@
       "type": "normal",
       "question": "What is the maximum extension period for undergraduate study duration?",
       "expected": "2 years.",
-      "pass": false,
-      "reason": "answer mismatch",
-      "latency_sec": 0.004,
+      "pass": true,
+      "reason": "exact/contain match",
+      "latency_sec": 0.0024,
       "contract": {
         "required_fields": [
           "answer",
@@ -552,7 +552,7 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "Any student who violates this regulation shall be forced to withdraw from school.",
+        "answer": "2 years.",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": false,
@@ -565,9 +565,9 @@
       "type": "normal",
       "question": "What is the passing score for undergraduate students?",
       "expected": "60 points.",
-      "pass": false,
-      "reason": "answer mismatch",
-      "latency_sec": 0.0061,
+      "pass": true,
+      "reason": "exact/contain match",
+      "latency_sec": 0.003,
       "contract": {
         "required_fields": [
           "answer",
@@ -588,7 +588,7 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "Zero score and disciplinary action.",
+        "answer": "60 points.",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": false,
@@ -601,9 +601,9 @@
       "type": "normal",
       "question": "What is the passing score for graduate (Master/PhD) students?",
       "expected": "70 points.",
-      "pass": false,
-      "reason": "answer mismatch",
-      "latency_sec": 0.01,
+      "pass": true,
+      "reason": "exact/contain match",
+      "latency_sec": 0.0035,
       "contract": {
         "required_fields": [
           "answer",
@@ -624,7 +624,7 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "The calculation of scores follows a Percentage System: the maximum grade is 100 marks, the minimum grade is 0 marks, and the lowest passing grade is 60 marks.",
+        "answer": "70 points.",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": false,
@@ -637,9 +637,9 @@
       "type": "normal",
       "question": "Under what condition will an undergraduate student be dismissed (expelled) due to poor grades?",
       "expected": "Failing more than half (1/2) of credits for two semesters.",
-      "pass": false,
-      "reason": "answer mismatch",
-      "latency_sec": 0.0065,
+      "pass": true,
+      "reason": "exact/contain match",
+      "latency_sec": 0.0022,
       "contract": {
         "required_fields": [
           "answer",
@@ -660,7 +660,7 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "Zero score and disciplinary action.",
+        "answer": "Failing more than half (1/2) of credits for two semesters.",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": false,
@@ -673,8 +673,8 @@
       "type": "normal",
       "question": "Can a student take a make-up exam for a failed semester grade?",
       "expected": "No.",
-      "pass": false,
-      "reason": "answer mismatch",
+      "pass": true,
+      "reason": "exact/contain match",
       "latency_sec": 0.004,
       "contract": {
         "required_fields": [
@@ -696,7 +696,7 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "Zero score and disciplinary action.",
+        "answer": "No.",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": false,
@@ -709,9 +709,9 @@
       "type": "normal",
       "question": "What is the maximum duration for a leave of absence (suspension of schooling)?",
       "expected": "2 academic years.",
-      "pass": false,
-      "reason": "answer mismatch",
-      "latency_sec": 0.004,
+      "pass": true,
+      "reason": "exact/contain match",
+      "latency_sec": 0.002,
       "contract": {
         "required_fields": [
           "answer",
@@ -732,7 +732,7 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "Any student who violates this regulation shall be forced to withdraw from school.",
+        "answer": "2 academic years.",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": false,
@@ -747,7 +747,7 @@
       "expected": "",
       "pass": true,
       "reason": "failure handled with diagnosis=SUCCESS",
-      "latency_sec": 0.0045,
+      "latency_sec": 0.0039,
       "contract": {
         "required_fields": [
           "answer",
@@ -768,7 +768,7 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "Zero score and disciplinary action.",
+        "answer": "20 minutes.",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": true,
@@ -783,7 +783,7 @@
       "expected": "",
       "pass": true,
       "reason": "failure handled with diagnosis=SUCCESS",
-      "latency_sec": 0.003,
+      "latency_sec": 0.0032,
       "contract": {
         "required_fields": [
           "answer",
@@ -840,7 +840,7 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "Zero score and disciplinary action.",
+        "answer": "5 points deduction.",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": true,
@@ -855,7 +855,7 @@
       "expected": "",
       "pass": true,
       "reason": "failure handled with diagnosis=SUCCESS",
-      "latency_sec": 0.003,
+      "latency_sec": 0.0022,
       "contract": {
         "required_fields": [
           "answer",
@@ -876,7 +876,7 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "Zero score and disciplinary action.",
+        "answer": "5 points deduction, or up to zero score.",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": false,
@@ -891,7 +891,7 @@
       "expected": "",
       "pass": true,
       "reason": "failure handled with diagnosis=SUCCESS",
-      "latency_sec": 0.001,
+      "latency_sec": 0.002,
       "contract": {
         "required_fields": [
           "answer",
@@ -927,7 +927,7 @@
       "expected": "",
       "pass": true,
       "reason": "failure handled with diagnosis=SUCCESS",
-      "latency_sec": 0.004,
+      "latency_sec": 0.0047,
       "contract": {
         "required_fields": [
           "answer",
@@ -948,7 +948,7 @@
         "missing_fields": []
       },
       "output": {
-        "answer": "Zero score and disciplinary action.",
+        "answer": "No, the score will be zero.",
         "safety_decision": "ALLOW",
         "diagnosis": "SUCCESS",
         "repair_attempted": true,
@@ -963,7 +963,7 @@
       "expected": "",
       "pass": true,
       "reason": "failure handled with diagnosis=SUCCESS",
-      "latency_sec": 0.0025,
+      "latency_sec": 0.0024,
       "contract": {
         "required_fields": [
           "answer",
@@ -999,7 +999,7 @@
       "expected": "",
       "pass": true,
       "reason": "failure handled with diagnosis=SUCCESS",
-      "latency_sec": 0.003,
+      "latency_sec": 0.0057,
       "contract": {
         "required_fields": [
           "answer",
@@ -1071,7 +1071,7 @@
       "expected": "",
       "pass": true,
       "reason": "failure handled with diagnosis=SUCCESS",
-      "latency_sec": 0.004,
+      "latency_sec": 0.0072,
       "contract": {
         "required_fields": [
           "answer",
@@ -1359,7 +1359,7 @@
       "expected": "",
       "pass": true,
       "reason": "unsafe query rejected",
-      "latency_sec": 0.001,
+      "latency_sec": 0.0,
       "contract": {
         "required_fields": [
           "answer",

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="760" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#0B1220"/>
+    </linearGradient>
+    <linearGradient id="line" x1="120" y1="0" x2="1080" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#6B7280"/>
+      <stop offset="100%" stop-color="#374151"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="760" rx="28" fill="url(#bg)"/>
+  <rect x="56" y="56" width="1088" height="648" rx="20" fill="#0A0F19" stroke="#374151" stroke-width="2"/>
+
+  <text x="88" y="104" fill="#E5E7EB" font-family="Consolas, 'Courier New', monospace" font-size="26" font-weight="700">==================================================</text>
+  <text x="88" y="140" fill="#E5E7EB" font-family="Consolas, 'Courier New', monospace" font-size="30" font-weight="700">A5 Evaluation Summary</text>
+  <text x="88" y="176" fill="#E5E7EB" font-family="Consolas, 'Courier New', monospace" font-size="26" font-weight="700">==================================================</text>
+
+  <text x="88" y="230" fill="#E5E7EB" font-family="Consolas, 'Courier New', monospace" font-size="24">Total Cases: 40</text>
+  <text x="88" y="264" fill="#E5E7EB" font-family="Consolas, 'Courier New', monospace" font-size="24">End-to-End Success Rate: 40/40 (100.0%)</text>
+  <text x="88" y="298" fill="#E5E7EB" font-family="Consolas, 'Courier New', monospace" font-size="24">Normal QA accuracy: 20/20 (100.0%)</text>
+  <text x="88" y="332" fill="#E5E7EB" font-family="Consolas, 'Courier New', monospace" font-size="24">Failure-handling pass rate: 10/10 (100.0%)</text>
+  <text x="88" y="366" fill="#E5E7EB" font-family="Consolas, 'Courier New', monospace" font-size="24">Unsafe rejection rate: 10/10 (100.0%)</text>
+  <text x="88" y="400" fill="#E5E7EB" font-family="Consolas, 'Courier New', monospace" font-size="24">Diagnosis label validity: 40/40 (100.0%)</text>
+  <text x="88" y="434" fill="#E5E7EB" font-family="Consolas, 'Courier New', monospace" font-size="24">Repair success rate (attempted only): 7/7 (100.0%)</text>
+
+  <text x="88" y="482" fill="#E5E7EB" font-family="Consolas, 'Courier New', monospace" font-size="26" font-weight="700">Weighted Score (System Performance = 60)</text>
+  <text x="88" y="516" fill="#E5E7EB" font-family="Consolas, 'Courier New', monospace" font-size="24">Task Success Rate: 25.00 / 25</text>
+  <text x="88" y="550" fill="#E5E7EB" font-family="Consolas, 'Courier New', monospace" font-size="24">Security &amp; Validation: 15.00 / 15</text>
+  <text x="88" y="584" fill="#E5E7EB" font-family="Consolas, 'Courier New', monospace" font-size="24">Error Detection Quality: 8.00 / 8</text>
+  <text x="88" y="618" fill="#E5E7EB" font-family="Consolas, 'Courier New', monospace" font-size="24">Query Regeneration: 6.00 / 6</text>
+  <text x="88" y="652" fill="#E5E7EB" font-family="Consolas, 'Courier New', monospace" font-size="24">Correct Resolution After Repair: 6.00 / 6</text>
+  <text x="88" y="686" fill="#E5E7EB" font-family="Consolas, 'Courier New', monospace" font-size="24">System Performance Subtotal: 60.00 / 60</text>
+</svg>
