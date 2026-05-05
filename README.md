@@ -105,7 +105,7 @@ The current system is rule-based rather than LLM-based, which makes it fast, aud
 
 Latest automated evaluation results:
 
-![A5 Evaluation Summary](assets/result-summary.svg)
+![A5 Evaluation Summary](assets/image.png)
 
 - End-to-end success rate: 40/40 (100.0%)
 - Normal QA accuracy: 20/20 (100.0%)
